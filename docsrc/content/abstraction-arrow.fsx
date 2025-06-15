@@ -123,6 +123,11 @@ let kleisliAdd = Kleisli addTen
 let result7a = (Kleisli.run kleisliAdd) 6.0 // Some 16.0
 let result7b = (Kleisli.run kleisliSqrt) 16.0 // Some 4.0
 
+// Demonstrate arrow composition with bind
+let result7c = 
+    (Kleisli.run kleisliAdd) 6.0 
+    |> Option.bind (Kleisli.run kleisliSqrt) // Some 4.0
+
 (**
 
 
