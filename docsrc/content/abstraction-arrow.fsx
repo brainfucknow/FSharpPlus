@@ -112,19 +112,16 @@ Working with Kleisli arrows:
 *)
 
 // Kleisli arrows for Option monad
-let safeDivide x y = if y = 0 then None else Some (x / y)
 let safeSquareRoot x = if x < 0.0 then None else Some (sqrt x)
+let addTen x = Some (x + 10.0)
 
 // Create Kleisli arrows
-let kleisliDiv = Kleisli safeDivide
-let kleisliSqrt = Kleisli (fun x -> safeSquareRoot x)
+let kleisliSqrt = Kleisli safeSquareRoot
+let kleisliAdd = Kleisli addTen
 
-// Example: divide 16 by 2, then take square root
-let divideFirst = Kleisli.run kleisliDiv 16.0 2.0 // Some 8.0
-let result7 = 
-    match divideFirst with
-    | Some x -> Kleisli.run kleisliSqrt x // Some 2.828...
-    | None -> None
+// Compose Kleisli arrows: first add 10, then take square root
+let composedKleisli = kleisliAdd >>> kleisliSqrt
+let result7 = Kleisli.run composedKleisli 6.0 // Some 4.0 (sqrt(16))
 
 (**
 
