@@ -120,7 +120,7 @@ let kleisliSqrt = Kleisli safeSquareRoot
 
 // Compose Kleisli arrows
 let composedKleisli = kleisliDiv >>> kleisliSqrt
-let result7 = Kleisli.run composedKleisli 16.0 2.0 // Some 2.828...
+let result7 = (Kleisli.run composedKleisli) 16.0 2.0 // Some 2.828...
 
 (**
 
