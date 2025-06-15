@@ -119,9 +119,9 @@ let addTen x = Some (x + 10.0)
 let kleisliSqrt = Kleisli safeSquareRoot
 let kleisliAdd = Kleisli addTen
 
-// Compose Kleisli arrows: first add 10, then take square root
-let composedKleisli = kleisliAdd >>> kleisliSqrt
-let result7 = (Kleisli.run composedKleisli) 6.0 // Some 4.0 (sqrt(16))
+// Use individual Kleisli arrows
+let result7a = (Kleisli.run kleisliAdd) 6.0 // Some 16.0
+let result7b = (Kleisli.run kleisliSqrt) 16.0 // Some 4.0
 
 (**
 
