@@ -67,6 +67,63 @@ Rules
 *)
 (**
 
+Examples
+--------
+
+Here are some examples showing how Arrow operations work:
+
+*)
+
+#r "nuget: FSharpPlus"
+open FSharpPlus
+
+// Basic arrow operations with functions
+let addOne = (+) 1
+let multiplyByTwo = (*) 2
+
+// arr: lift a function into an arrow
+let arrowAddOne = arr addOne
+let result1 = arrowAddOne 5 // 6
+
+// first: apply arrow to first element of a tuple
+let firstAddOne = first addOne
+let result2 = firstAddOne (5, "hello") // (6, "hello")
+
+// second: apply arrow to second element of a tuple  
+let secondMultiply = second multiplyByTwo
+let result3 = secondMultiply ("hello", 5) // ("hello", 10)
+
+// (***): apply two arrows to both elements of a tuple
+let bothOps = addOne *** multiplyByTwo
+let result4 = bothOps (5, 3) // (6, 6)
+
+// (&&&): apply two arrows to the same input, producing a tuple
+let fanout = addOne &&& multiplyByTwo
+let result5 = fanout 5 // (6, 10)
+
+// Composing arrows
+let composed = arr addOne >>> arr multiplyByTwo
+let result6 = composed 5 // 12 (first add 1, then multiply by 2)
+
+(**
+
+Working with Kleisli arrows:
+
+*)
+
+// Kleisli arrows for Option monad
+let safeDivide x y = if y = 0 then None else Some (x / y)
+let safeSquareRoot x = if x < 0.0 then None else Some (sqrt x)
+
+let kleisliDiv = Kleisli safeDivide
+let kleisliSqrt = Kleisli safeSquareRoot
+
+// Compose Kleisli arrows
+let composedKleisli = kleisliDiv >>> kleisliSqrt
+let result7 = Kleisli.run composedKleisli 16.0 2.0 // Some 2.828...
+
+(**
+
 
 Concrete implementations
 ------------------------
