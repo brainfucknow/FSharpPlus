@@ -115,12 +115,16 @@ Working with Kleisli arrows:
 let safeDivide x y = if y = 0 then None else Some (x / y)
 let safeSquareRoot x = if x < 0.0 then None else Some (sqrt x)
 
+// Create Kleisli arrows
 let kleisliDiv = Kleisli safeDivide
 let kleisliSqrt = Kleisli (fun x -> safeSquareRoot x)
 
-// Compose Kleisli arrows - this creates a pipeline that divides then takes square root
-let composedKleisli = kleisliDiv >>> kleisliSqrt
-let result7 = (Kleisli.run composedKleisli) 16.0 2.0 // Some 2.828...
+// Example: divide 16 by 2, then take square root
+let divideFirst = Kleisli.run kleisliDiv 16.0 2.0 // Some 8.0
+let result7 = 
+    match divideFirst with
+    | Some x -> Kleisli.run kleisliSqrt x // Some 2.828...
+    | None -> None
 
 (**
 
