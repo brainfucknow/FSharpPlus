@@ -86,19 +86,19 @@ let arrowAddOne = arr addOne
 let result1 = arrowAddOne 5 // 6
 
 // first: apply arrow to first element of a tuple
-let firstAddOne = first addOne
+let firstAddOne = first (arr addOne)
 let result2 = firstAddOne (5, "hello") // (6, "hello")
 
 // second: apply arrow to second element of a tuple  
-let secondMultiply = second multiplyByTwo
+let secondMultiply = second (arr multiplyByTwo)
 let result3 = secondMultiply ("hello", 5) // ("hello", 10)
 
 // (***): apply two arrows to both elements of a tuple
-let bothOps = addOne *** multiplyByTwo
+let bothOps = arr addOne *** arr multiplyByTwo
 let result4 = bothOps (5, 3) // (6, 6)
 
 // (&&&): apply two arrows to the same input, producing a tuple
-let fanout = addOne &&& multiplyByTwo
+let fanout = arr addOne &&& arr multiplyByTwo
 let result5 = fanout 5 // (6, 10)
 
 // Composing arrows
