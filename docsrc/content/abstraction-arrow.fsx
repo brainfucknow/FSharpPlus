@@ -121,7 +121,7 @@ let kleisliAdd = Kleisli addTen
 
 // Compose Kleisli arrows: first add 10, then take square root
 let composedKleisli = kleisliAdd >>> kleisliSqrt
-let result7 = Kleisli.run composedKleisli 6.0 // Some 4.0 (sqrt(16))
+let result7 = (Kleisli.run composedKleisli) 6.0 // Some 4.0 (sqrt(16))
 
 (**
 
