@@ -116,9 +116,9 @@ let safeDivide x y = if y = 0 then None else Some (x / y)
 let safeSquareRoot x = if x < 0.0 then None else Some (sqrt x)
 
 let kleisliDiv = Kleisli safeDivide
-let kleisliSqrt = Kleisli safeSquareRoot
+let kleisliSqrt = Kleisli (fun x -> safeSquareRoot x)
 
-// Compose Kleisli arrows
+// Compose Kleisli arrows - this creates a pipeline that divides then takes square root
 let composedKleisli = kleisliDiv >>> kleisliSqrt
 let result7 = (Kleisli.run composedKleisli) 16.0 2.0 // Some 2.828...
 
