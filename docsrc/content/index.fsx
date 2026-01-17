@@ -115,6 +115,10 @@ New to FSharpPlus? Start here and progress at your own pace:
    
    Step-by-step guide to adopting FSharpPlus in your codebase.
 
+ * **[Quick Reference](quick-reference.html)** - Cheat sheet for common operations
+   
+   Printable reference guide with examples of frequently used functions and operators.
+
 ### 📚 In-Depth Documentation
 
  * **[Tutorial](tutorial.html)** - Detailed walkthrough of FSharpPlus features

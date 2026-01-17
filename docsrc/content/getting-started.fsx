@@ -229,10 +229,13 @@ let errorResult = Error "Something went wrong"
 let resultDoubled = map ((*) 2) successResult     // Ok 84
 
 // Handle errors
-let handled = Result.either 
-    (fun x -> sprintf "Success: %d" x)
-    (fun e -> sprintf "Error: %s" e)
-    successResult                                 // "Success: 42"
+let getResultMessage result =
+    Result.either 
+        (fun x -> sprintf "Success: %d" x)
+        (fun e -> sprintf "Error: %s" e)
+        result
+        
+let handled = getResultMessage successResult      // "Success: 42"
 
 (**
 ### Working with Collections
