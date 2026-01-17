@@ -86,19 +86,60 @@ map string (NonEmptyList.create 2 [3;4;5])
 
 (**
 
-For a more hands on run through F#+ we recommend following the tutorial:
+Learning Path: From Zero to Hero
+---------------------------------
 
- * [Tutorial](tutorial.html) contains a further explanation of this library.
+New to FSharpPlus? Start here and progress at your own pace:
 
+### 🚀 Getting Started
+
+ * **[Getting Started Guide](getting-started.html)** - Your first steps with FSharpPlus
+   
+   Quick introduction to the most useful features. Start here if you're new!
+
+ * **[Learning Path](learning-path.html)** - Structured roadmap from beginner to expert
+   
+   A week-by-week guide that takes you from basics to advanced topics.
+
+### 💡 Practical Guides
+
+ * **[Common Patterns](common-patterns.html)** - Real-world patterns and solutions
+   
+   See how to solve everyday problems with FSharpPlus.
+
+ * **[When to Use What](when-to-use.html)** - Decision guide for choosing abstractions
+   
+   Confused about Option vs Result vs Validation? This guide helps you decide.
+
+ * **[Migrating to FSharpPlus](migrating-to-fsharpplus.html)** - Convert existing F# code
+   
+   Step-by-step guide to adopting FSharpPlus in your codebase.
+
+### 📚 In-Depth Documentation
+
+ * **[Tutorial](tutorial.html)** - Detailed walkthrough of FSharpPlus features
+
+ * **[Extensions](extensions.html)** - Helper functions for existing types
+
+ * **[Generic Functions](generic-doc.html)** - Polymorphic functions and operators
+
+ * **[Computation Expressions](computation-expressions.html)** - monad, applicative, and more
+
+ * **[Abstractions](abstractions.html)** - Functor, Monad, Foldable, and other abstractions
+
+ * **[Lenses](lens.html)** - Elegant data access and updates
+
+ * **[Types](types.html)** - NonEmptyList, Validation, DList, and other useful types
 
 Reference Documentation
 -----------------------
 
- * [Types](types.html) contains detailed information about all the types provided in this library.
+ * **[API Reference](reference/index.html)** - Complete API documentation for all types, modules
+   and functions in the library. Includes detailed samples.
 
- * [API Reference](reference/index.html) contains automatically generated documentation for all types, modules
-   and functions in the library. This includes additional brief samples on using most of the
-   functions.
+ * **[Operators Reference](operators-common.html)** - Guide to common operators
+
+ * **[Applicative Functors](applicative-functors.html)** - Understanding Functor, Applicative, and Monad
 
 Samples
 -----------------------
