@@ -101,24 +101,6 @@ New to FSharpPlus? Start here and progress at your own pace:
    
    A week-by-week guide that takes you from basics to advanced topics.
 
-### 💡 Practical Guides
-
- * **[Common Patterns](common-patterns.html)** - Real-world patterns and solutions
-   
-   See how to solve everyday problems with FSharpPlus.
-
- * **[When to Use What](when-to-use.html)** - Decision guide for choosing abstractions
-   
-   Confused about Option vs Result vs Validation? This guide helps you decide.
-
- * **[Migrating to FSharpPlus](migrating-to-fsharpplus.html)** - Convert existing F# code
-   
-   Step-by-step guide to adopting FSharpPlus in your codebase.
-
- * **[Quick Reference](quick-reference.html)** - Cheat sheet for common operations
-   
-   Printable reference guide with examples of frequently used functions and operators.
-
 ### 📚 In-Depth Documentation
 
  * **[Tutorial](tutorial.html)** - Detailed walkthrough of FSharpPlus features

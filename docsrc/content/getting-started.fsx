@@ -255,10 +255,9 @@ let sum = fold (+) 0 [1; 2; 3; 4; 5]
 Now that you've seen the basics, here's how to continue your journey:
 
 1. **[Learning Path](learning-path.html)** - A structured roadmap from beginner to advanced
-2. **[Common Patterns](common-patterns.html)** - Real-world patterns you'll use daily  
-3. **[Tutorial](tutorial.html)** - Deeper dive into FSharpPlus features
-4. **[When to Use What](when-to-use.html)** - Decision guide for choosing the right abstraction
-5. **[Migrating to FSharpPlus](migrating-to-fsharpplus.html)** - Converting existing F# code
+2. **[Tutorial](tutorial.html)** - Deeper dive into FSharpPlus features
+3. **[Abstractions](abstractions.html)** - Understanding the underlying concepts
+4. **[API Reference](reference/index.html)** - Complete API documentation
 
 ## Getting Help
 

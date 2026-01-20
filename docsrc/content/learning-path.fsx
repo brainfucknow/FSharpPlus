@@ -389,8 +389,8 @@ let updated = setl (_2 << _1) 31 person           // ("John", (31, "john@example
 Based on your current level:
 
 - **Beginner**: Start with [Getting Started](getting-started.html)
-- **Intermediate**: Jump to [Common Patterns](common-patterns.html)
-- **Advanced**: Explore [Abstractions](abstractions.html)
+- **Intermediate**: Explore [Tutorial](tutorial.html) for deeper understanding
+- **Advanced**: Study [Abstractions](abstractions.html) and type details
 
 Remember: The goal isn't to use every feature of FSharpPlus. The goal is to 
 write better, more maintainable F# code. Use what helps you, skip what doesn't.
