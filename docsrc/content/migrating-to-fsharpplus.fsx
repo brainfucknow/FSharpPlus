@@ -239,6 +239,7 @@ let loadBalance config =
 #### Before
 *)
 
+type UserRecord = { Name: string; Email: string; Age: int }
 type ValidationError = string list
 
 let validateUser name email age =
@@ -256,11 +257,13 @@ let validateUser name email age =
     if errors.Count > 0 then
         Error (List.ofSeq errors)
     else
-        Ok { Name = name; Email = email; Age = age }
+        Ok ({ Name = name; Email = email; Age = age } : UserRecord)
 
 (**
 #### After
 *)
+
+type UserRecord = { Name: string; Email: string; Age: int }
 
 let validateUser name email age =
     let validateName n =
@@ -278,7 +281,7 @@ let validateUser name email age =
         then Validation.ok a
         else Validation.error ["Must be 18+"]
     
-    (fun n e a -> { Name = n; Email = e; Age = a })
+    (fun n e a -> { Name = n; Email = e; Age = a } : UserRecord)
     <!> validateName name
     <*> validateEmail email
     <*> validateAge age

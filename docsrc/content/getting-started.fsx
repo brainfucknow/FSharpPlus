@@ -152,12 +152,10 @@ let validateEmail email =
 
 // Using applicative style to combine validations
 let validatePerson name age email =
-    result {
-        let! n = validateName name  |> Validation.toResult
-        let! a = validateAge age    |> Validation.toResult
-        let! e = validateEmail email |> Validation.toResult
-        return { Name = n; Age = a; Email = e }
-    }
+    (fun n a e -> { Name = n; Age = a; Email = e })
+    <!> validateName name
+    <*> validateAge age
+    <*> validateEmail email
 
 (**
 #### DList - Efficient list concatenation
